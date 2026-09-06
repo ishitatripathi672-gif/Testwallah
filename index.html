@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Wallah — by Team Leakage</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root[data-theme="dark"]{
+    --bg:#0A0A0E; --surface:#151319; --surface2:#1E1B24; --border:#2C2833;
+    --text:#F6F5F8; --muted:#948FA0; --accent:#FFB020; --accent-ink:#211200;
+    --good:#2ED573; --bad:#FF3B57; --phy:#4EA8DE; --chem:#FF8A3D; --math:#B784F0;
+    --bio:#2ED573; --gen:#FF6B9D; --shadow: 0 16px 34px rgba(0,0,0,.45);
+    --glow: radial-gradient(circle, rgba(255,59,87,.35) 0%, transparent 70%);
+  }
+  :root[data-theme="light"]{
+    --bg:#FAF7F0; --surface:#FFFFFF; --surface2:#F3EBDA; --border:#E6DCC4;
+    --text:#1B1710; --muted:#726A56; --accent:#C97A00; --accent-ink:#FFF8E8;
+    --good:#1E9C6C; --bad:#D6304A; --phy:#1D6FA5; --chem:#C9701A; --math:#7A4FB0;
+    --bio:#1E9C6C; --gen:#C23E68; --shadow: 0 16px 34px rgba(0,0,0,.12);
+    --glow: radial-gradient(circle, rgba(214,48,74,.18) 0%, transparent 70%);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    min-height:100vh; transition:background .25s ease, color .25s ease;
+  }
+  h1,h2,h3,.display{font-family:'Space Grotesk', sans-serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  ::selection{background:var(--accent); color:var(--accent-ink);}
+
+  header.top{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; border-bottom:1px solid var(--border);
+    position:sticky; top:0; background:var(--bg); z-index:40;
+    transition:box-shadow .25s ease;
+  }
+  header.top.scrolled{box-shadow:0 8px 24px rgba(0,0,0,.25);}
+  .brand{display:flex; align-items:center; gap:10px; position:relative;}
+  .brand::before{
+    content:""; position:absolute; left:-6px; top:50%; transform:translateY(-50%);
+    width:46px; height:46px; border-radius:50%; background:var(--glow); pointer-events:none; z-index:0;
+  }
+  .brand .mark{
+    width:36px; height:36px; border-radius:9px; object-fit:cover;
+    transform:rotate(-4deg); transition:transform .3s ease; display:block; position:relative; z-index:1;
+    box-shadow:0 3px 10px rgba(0,0,0,.35);
+  }
+  .brand:hover .mark{transform:rotate(6deg) scale(1.08);}
+  .brand .name{font-size:18px; font-weight:600; letter-spacing:.2px;}
+  .brand .sub{font-size:11px; color:var(--muted);}
+  nav.exams{display:flex; gap:4px; background:var(--surface); padding:4px; border-radius:10px; border:1px solid var(--border); position:relative;}
+  nav.exams button{
+    border:none; background:transparent; color:var(--muted); padding:8px 16px;
+    border-radius:7px; font-weight:600; font-size:13px; cursor:pointer; font-family:inherit;
+    transition:color .2s ease, background .25s ease; position:relative; z-index:1;
+  }
+  nav.exams button.active{background:var(--accent); color:var(--accent-ink);}
+  .top-actions{display:flex; align-items:center; gap:14px;}
+  .streak{font-size:13px; color:var(--muted); display:flex; gap:6px; align-items:center;}
+  .streak .flame{display:inline-block; animation:flicker 1.6s ease-in-out infinite;}
+  @keyframes flicker{0%,100%{transform:scale(1) rotate(0deg);}25%{transform:scale(1.12) rotate(-4deg);}50%{transform:scale(0.96) rotate(3deg);}75%{transform:scale(1.08) rotate(-2deg);}}
+  .icon-btn{
+    width:36px; height:36px; border-radius:9px; border:1px solid var(--border);
+    background:var(--surface); color:var(--text); cursor:pointer; display:flex;
+    align-items:center; justify-content:center; font-size:16px; transition:transform .25s ease, background .2s ease;
+  }
+  .icon-btn:hover{transform:rotate(-12deg) scale(1.08); background:var(--surface2);}
+  .icon-btn:active{transform:scale(.92);}
+
+  main{max-width:1080px; margin:0 auto; padding:36px 24px 100px;}
+
+  .hero{display:grid; grid-template-columns:1.3fr 1fr; gap:28px; align-items:stretch; margin-bottom:40px;}
+  @media(max-width:760px){.hero{grid-template-columns:1fr;}}
+  .hero-card{
+    background:linear-gradient(160deg, var(--surface), var(--surface2));
+    border:1px solid var(--border); border-radius:16px; padding:28px;
+    position:relative; overflow:hidden;
+    opacity:0; transform:translateY(14px); animation:heroIn .7s ease forwards;
+  }
+  .hero-card::before, .hero-card::after{
+    content:""; position:absolute; border-radius:50%; filter:blur(2px); pointer-events:none; opacity:.5;
+    background:radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  }
+  .hero-card::before{width:220px; height:220px; top:-90px; right:-60px; animation:blobFloat 9s ease-in-out infinite;}
+  .hero-card::after{width:140px; height:140px; bottom:-70px; right:80px; opacity:.3; animation:blobFloat 7s ease-in-out infinite reverse;}
+  @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-14px,16px) scale(1.08);}}
+  @keyframes heroIn{ to{ opacity:1; transform:translateY(0); } }
+  .hero-card > *{position:relative; z-index:1;}
+  .hero-card h1{font-size:30px; line-height:1.15; margin-bottom:10px;}
+  .hero-card h1 .grad{
+    background:linear-gradient(100deg, var(--accent) 10%, var(--bad) 90%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-card p{color:var(--muted); font-size:14px; max-width:36ch; margin-bottom:20px;}
+  .cta-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .btn{
+    border:none; padding:11px 18px; border-radius:9px; font-weight:600; font-size:13.5px;
+    cursor:pointer; font-family:inherit; transition:transform .18s ease, box-shadow .18s ease, opacity .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.22);}
+  .btn:active{transform:translateY(0) scale(.97);}
+  .btn:disabled{opacity:.6; cursor:default; transform:none; box-shadow:none;}
+  .btn.primary{background:var(--accent); color:var(--accent-ink);}
+  .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--border);}
+  .stat-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:24px; display:flex; flex-direction:column; justify-content:space-between;
+    opacity:0; transform:translateY(14px); animation:heroIn .7s ease .12s forwards;
+  }
+  .stat-card .big{font-family:'Space Grotesk'; font-size:44px; font-weight:700; line-height:1;}
+  .stat-card .lbl{color:var(--muted); font-size:12.5px; margin-top:4px;}
+  .stat-row{display:flex; justify-content:space-between; align-items:flex-end; padding-top:16px; border-top:1px solid var(--border); margin-top:16px;}
+  .pill{font-size:11.5px; padding:4px 9px; border-radius:20px; background:var(--surface2); color:var(--muted); border:1px solid var(--border);}
+
+  section h2.sec-title{font-size:15px; text-transform:none; letter-spacing:.2px; color:var(--muted); margin-bottom:14px; font-weight:600;}
+  .exam-section{
+    border-radius:20px; padding:26px 26px 30px; margin-bottom:34px; border:1px solid var(--border);
+    background:linear-gradient(155deg, var(--surface) 0%, var(--bg) 120%);
+    opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;
+    position:relative; overflow:hidden;
+  }
+  .exam-section.in-view{opacity:1; transform:translateY(0);}
+  .exam-section::before{
+    content:""; position:absolute; top:-40%; right:-10%; width:280px; height:280px; border-radius:50%;
+    background:radial-gradient(circle, var(--ec) 0%, transparent 70%); opacity:.16; pointer-events:none;
+  }
+  .exam-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; flex-wrap:wrap; gap:10px;}
+  .exam-head .titles{display:flex; align-items:center; gap:12px;}
+  .exam-head .badge{
+    width:44px; height:44px; border-radius:12px; background:var(--ec); color:#0B1220; display:flex;
+    align-items:center; justify-content:center; font-family:'Space Grotesk'; font-weight:700; font-size:15px;
+    flex-shrink:0;
+  }
+  .exam-head h2{font-size:21px;}
+  .exam-head p{color:var(--muted); font-size:12.5px; margin-top:2px;}
+  .ai-mock-btn{
+    border:1px solid var(--ec); color:var(--ec); background:transparent; padding:9px 15px; border-radius:9px;
+    font-weight:600; font-size:12.5px; cursor:pointer; font-family:inherit; display:flex; align-items:center; gap:6px;
+  }
+  .ai-mock-btn:hover{background:var(--ec); color:#0B1220;}
+  .subject-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:14px;}
+  .stream-header{
+    grid-column:1 / -1; font-family:'Space Grotesk'; font-size:12px; text-transform:uppercase;
+    letter-spacing:.6px; color:var(--muted); padding:6px 2px 2px; margin-top:4px;
+    border-bottom:1px dashed var(--border); display:flex; align-items:center; gap:8px;
+  }
+  .stream-header:first-child{margin-top:0;}
+  .stream-header::after{content:""; flex:1; height:1px;}
+  .subj-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px;
+    border-left:4px solid var(--c); cursor:default;
+    opacity:0; transform:translateY(16px) scale(.97);
+    animation:cardIn .5s ease forwards;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  @keyframes cardIn{ to{ opacity:1; transform:translateY(0) scale(1); } }
+  .subj-card:hover{box-shadow:0 14px 30px rgba(0,0,0,.28); transform:translateY(-4px);}
+  .subj-card .top-line{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;}
+  .subj-card .subj-name{font-family:'Space Grotesk'; font-weight:600; font-size:17px;}
+  .subj-card .dot{width:9px; height:9px; border-radius:50%; background:var(--c);}
+  .subj-card .meta{color:var(--muted); font-size:12.5px; display:flex; gap:12px; margin-bottom:16px;}
+  .subj-card .best{font-size:12px; color:var(--muted);}
+  .subj-card .best b{color:var(--text);}
+  .subj-card .btn-row{display:flex; gap:8px; margin-top:14px;}
+  .subj-card button{
+    background:var(--surface2); border:1px solid var(--border); color:var(--text);
+    padding:9px; border-radius:8px; font-weight:600; font-size:12.5px; cursor:pointer; font-family:inherit;
+  }
+  .subj-card .start-btn{flex:1;}
+  .subj-card .ai-add-btn{
+    width:38px; flex-shrink:0; background:transparent; border:1px solid var(--c); color:var(--c);
+  }
+  .subj-card .ai-add-btn.loading{animation:spin 1s linear infinite;}
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .subj-card .pool-note{font-size:10.5px; color:var(--muted); margin-top:6px;}
+
+  .live-banner{
+    display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;
+    background:linear-gradient(120deg, var(--surface), var(--surface2));
+    border:1px solid var(--border); border-left:4px solid var(--bad); border-radius:16px;
+    padding:20px 24px; margin-bottom:32px;
+    animation:heroIn .7s ease .05s forwards; opacity:0; transform:translateY(14px);
+    box-shadow:0 0 0 rgba(255,107,107,0); transition:box-shadow .4s ease;
+  }
+  .live-banner:hover{box-shadow:0 0 0 4px rgba(255,107,107,.08);}
+  .live-tag{
+    display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700;
+    color:var(--bad); letter-spacing:.4px; text-transform:uppercase;
+  }
+  .live-dot{width:8px; height:8px; border-radius:50%; background:var(--bad); animation:pulse 1.4s infinite;}
+  @keyframes pulse{0%{opacity:1;}50%{opacity:.25;}100%{opacity:1;}}
+  .live-banner h3{font-size:17px; margin:6px 0 4px;}
+  .live-banner p{color:var(--muted); font-size:12.5px;}
+  .live-right{display:flex; align-items:center; gap:14px;}
+  .live-countdown{font-family:'IBM Plex Mono'; font-size:13px; color:var(--muted); text-align:right;}
+  .live-countdown b{color:var(--text); display:block; font-size:16px;}
+
+  .board{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:24px; margin-bottom:20px;
+  }
+
+  .builder{
+    background:linear-gradient(150deg, var(--surface), var(--surface2)); border:1px solid var(--border);
+    border-radius:18px; padding:24px 26px 26px; margin-bottom:32px; position:relative; overflow:hidden;
+    opacity:0; transform:translateY(14px); animation:heroIn .7s ease .08s forwards;
+  }
+  .builder::before{
+    content:""; position:absolute; top:-60%; left:-8%; width:260px; height:260px; border-radius:50%;
+    background:radial-gradient(circle, var(--accent) 0%, transparent 70%); opacity:.12; pointer-events:none;
+  }
+  .builder-head{display:flex; align-items:center; gap:10px; margin-bottom:4px; position:relative; z-index:1;}
+  .builder-head .badge{
+    width:38px; height:38px; border-radius:10px; background:var(--accent); color:var(--accent-ink);
+    display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+  }
+  .builder-head h3{font-size:17px;}
+  .builder p.hint{color:var(--muted); font-size:12.5px; margin:4px 0 18px; position:relative; z-index:1;}
+  .builder-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; position:relative; z-index:1;}
+  @media(max-width:860px){.builder-grid{grid-template-columns:repeat(2,1fr);}}
+  .builder-grid label{display:flex; flex-direction:column; gap:6px; font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.3px;}
+  .builder-grid select{
+    background:var(--surface); border:1px solid var(--border); color:var(--text); padding:10px 10px;
+    border-radius:9px; font-family:inherit; font-size:13px; cursor:pointer; transition:border-color .18s ease;
+  }
+  .builder-grid select:hover, .builder-grid select:focus{border-color:var(--accent); outline:none;}
+  .builder-actions{display:flex; align-items:center; justify-content:space-between; margin-top:18px; flex-wrap:wrap; gap:10px; position:relative; z-index:1;}
+  .type-pills{display:flex; gap:8px; flex-wrap:wrap;}
+  .type-pill{
+    border:1px solid var(--border); background:var(--surface); color:var(--muted); padding:5px 12px;
+    border-radius:20px; font-size:11.5px; font-weight:600; cursor:pointer; transition:all .18s ease;
+  }
+  .type-pill.active{background:var(--accent); color:var(--accent-ink); border-color:var(--accent);}
+  .board-row{display:flex; align-items:center; gap:14px; padding:11px 0; border-bottom:1px solid var(--border); font-size:13.5px;}
+  .board-row:last-child{border:none;}
+  .board-row .rank{width:22px; color:var(--muted); font-family:'IBM Plex Mono';}
+  .board-row .barwrap{flex:1; height:8px; background:var(--surface2); border-radius:5px; overflow:hidden;}
+  .board-row .bar{height:100%; background:var(--accent);}
+  .board-row .pts{font-family:'IBM Plex Mono'; color:var(--muted); width:70px; text-align:right;}
+
+  footer.foot{max-width:1080px; margin:0 auto; padding:20px 24px 60px; color:var(--muted); font-size:12px; display:flex; justify-content:space-between;}
+
+  #quizScreen{display:none; position:fixed; inset:0; background:var(--bg); z-index:100; overflow-y:auto;}
+  #quizScreen.showing{animation:screenIn .35s ease;}
+  @keyframes screenIn{ from{ opacity:0; } to{ opacity:1; } }
+  .quiz-head{
+    display:flex; justify-content:space-between; align-items:center; padding:16px 26px;
+    border-bottom:1px solid var(--border); position:sticky; top:0; background:var(--bg); z-index:5;
+  }
+  .quiz-head .qtitle{font-weight:600; font-family:'Space Grotesk';}
+  .timer{
+    font-family:'IBM Plex Mono'; font-size:18px; padding:7px 14px; border-radius:8px;
+    background:var(--surface2); border:1px solid var(--border); transition:color .2s ease, border-color .2s ease;
+  }
+  .timer.low{color:var(--bad); border-color:var(--bad); animation:tickPulse 1s ease-in-out infinite;}
+  @keyframes tickPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+  .progress-track{height:4px; background:var(--surface2); overflow:hidden;}
+  .progress-fill{height:100%; background:linear-gradient(90deg, var(--accent), var(--good)); width:0%; transition:width .35s ease;}
+  .quiz-body{max-width:680px; margin:0 auto; padding:40px 24px;}
+  .qnum{color:var(--muted); font-size:13px; margin-bottom:10px;}
+  .qtext{font-size:19px; line-height:1.5; margin-bottom:26px; animation:qIn .35s ease;}
+  #optsWrap{animation:qIn .4s ease .04s backwards;}
+  @keyframes qIn{ from{ opacity:0; transform:translateX(10px); } to{ opacity:1; transform:translateX(0); } }
+  .opt{
+    display:flex; align-items:center; gap:12px; padding:14px 16px; border:1px solid var(--border);
+    border-radius:10px; margin-bottom:10px; cursor:pointer; font-size:14.5px; background:var(--surface);
+    transition:border-color .18s ease, background .18s ease, transform .15s ease;
+  }
+  .opt:hover{border-color:var(--accent); transform:translateX(3px);}
+  .opt.selected{border-color:var(--accent); background:var(--surface2); animation:optPop .25s ease;}
+  @keyframes optPop{0%{transform:scale(.98);}60%{transform:scale(1.01);}100%{transform:scale(1);}}
+  .opt .letter{
+    width:26px; height:26px; border-radius:7px; background:var(--surface2); display:flex; align-items:center;
+    justify-content:center; font-family:'IBM Plex Mono'; font-size:12.5px; flex-shrink:0; transition:background .18s ease, color .18s ease;
+  }
+  .opt.selected .letter{background:var(--accent); color:var(--accent-ink);}
+  .quiz-nav{display:flex; justify-content:space-between; margin-top:28px;}
+  .dots{display:flex; gap:6px; flex-wrap:wrap; margin-top:24px;}
+  .dots span{
+    width:26px; height:26px; border-radius:6px; display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-family:'IBM Plex Mono'; background:var(--surface2); color:var(--muted); cursor:pointer;
+    border:1px solid var(--border); transition:background .2s ease, transform .15s ease;
+  }
+  .dots span:hover{transform:translateY(-2px);}
+  .dots span.done{background:var(--accent); color:var(--accent-ink); border-color:var(--accent);}
+  .dots span.current{border-color:var(--text); box-shadow:0 0 0 2px rgba(255,255,255,.08);}
+
+  #resultScreen{display:none; position:fixed; inset:0; background:var(--bg); z-index:100; overflow-y:auto;}
+  #resultScreen.showing{animation:screenIn .4s ease;}
+  .res-wrap{max-width:520px; margin:0 auto; padding:60px 24px; text-align:center;}
+  .res-score{font-family:'Space Grotesk'; font-size:64px; font-weight:700; animation:scoreIn .55s cubic-bezier(.2,.9,.3,1.3);}
+  @keyframes scoreIn{ from{ opacity:0; transform:scale(.6); } to{ opacity:1; transform:scale(1); } }
+  .res-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:26px 0;}
+  .res-grid div{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; opacity:0; animation:heroIn .5s ease forwards;}
+  .res-grid div:nth-child(1){animation-delay:.1s;} .res-grid div:nth-child(2){animation-delay:.2s;} .res-grid div:nth-child(3){animation-delay:.3s;}
+  .res-grid .n{font-family:'Space Grotesk'; font-size:22px; font-weight:700;}
+  .res-grid .l{color:var(--muted); font-size:11.5px; margin-top:2px;}
+
+  .modal-backdrop{
+    position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; z-index:200;
+    opacity:0; transition:opacity .25s ease;
+  }
+  .modal-backdrop.show{display:flex; opacity:1;}
+  .tg-modal{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; max-width:340px;
+    text-align:center; box-shadow:var(--shadow); position:relative;
+    transform:scale(.9) translateY(10px); transition:transform .3s cubic-bezier(.2,.9,.3,1.3);
+  }
+  .modal-backdrop.show .tg-modal{transform:scale(1) translateY(0);}
+  .tg-modal .close{position:absolute; top:12px; right:14px; background:none; border:none; color:var(--muted); font-size:18px; cursor:pointer; transition:transform .15s ease;}
+  .tg-modal .close:hover{transform:rotate(90deg);}
+  .tg-modal .tg-icon{
+    width:56px; height:56px; border-radius:14px; background:#229ED9; color:#fff; font-size:26px;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 14px;
+    animation:blobFloat 3s ease-in-out infinite;
+  }
+  .tg-modal h3{margin-bottom:6px;}
+  .tg-modal p{color:var(--muted); font-size:13px; margin-bottom:18px;}
+  .tg-modal a.btn{display:inline-block; text-decoration:none; background:#229ED9; color:#fff;}
+
+  #aiBubble{
+    position:fixed; bottom:22px; right:22px; width:54px; height:54px; border-radius:50%;
+    background:var(--accent); color:var(--accent-ink); border:none; font-size:22px; cursor:pointer;
+    box-shadow:var(--shadow); z-index:150; transition:transform .2s ease;
+    animation:bubbleFloat 3.2s ease-in-out infinite;
+  }
+  @keyframes bubbleFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+  #aiBubble:hover{transform:scale(1.08); animation-play-state:paused;}
+  #aiBubble:active{transform:scale(.94);}
+  #aiPanel{
+    position:fixed; bottom:88px; right:22px; width:330px; max-height:460px; background:var(--surface);
+    border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); display:none;
+    flex-direction:column; z-index:150; overflow:hidden;
+    opacity:0; transform:translateY(16px) scale(.96); transition:opacity .25s ease, transform .25s ease;
+  }
+  #aiPanel.show{display:flex;}
+  #aiPanel.open{opacity:1; transform:translateY(0) scale(1);}
+  .ai-head{padding:14px 16px; border-bottom:1px solid var(--border); font-weight:600; font-size:13.5px; display:flex; justify-content:space-between; align-items:center;}
+  .ai-head span.tag{font-size:10.5px; color:var(--muted); font-weight:400;}
+  #aiMsgs{flex:1; overflow-y:auto; padding:14px 16px; display:flex; flex-direction:column; gap:10px; min-height:180px;}
+  .msg{font-size:13px; padding:9px 12px; border-radius:10px; max-width:85%; line-height:1.45; animation:qIn .3s ease;}
+  .msg.user{background:var(--accent); color:var(--accent-ink); align-self:flex-end;}
+  .msg.bot{background:var(--surface2); align-self:flex-start;}
+  .msg.bot.thinking{display:flex; gap:4px; align-items:center;}
+  .msg.bot.thinking span{width:6px; height:6px; border-radius:50%; background:var(--muted); animation:dotBounce 1s infinite;}
+  .msg.bot.thinking span:nth-child(2){animation-delay:.15s;} .msg.bot.thinking span:nth-child(3){animation-delay:.3s;}
+  @keyframes dotBounce{0%,80%,100%{transform:translateY(0); opacity:.4;}40%{transform:translateY(-4px); opacity:1;}}
+  .ai-input{display:flex; border-top:1px solid var(--border);}
+  .ai-input input{flex:1; border:none; background:transparent; padding:12px; color:var(--text); font-family:inherit; font-size:13px;}
+  .ai-input input:focus{outline:none;}
+  .ai-input button{border:none; background:transparent; color:var(--accent); font-weight:600; padding:0 14px; cursor:pointer; transition:transform .12s ease;}
+  .ai-input button:active{transform:scale(.9);}
+
+  @media(max-width:640px){
+    nav.exams{display:none;}
+    header.top{padding:14px 16px;}
+    .res-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <img class="mark" src="data:image/png;base64,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" alt="Team Leakage logo">
+    <div>
+      <div class="name">Test Wallah</div>
+      <div class="sub">by Team Leakage</div>
+    </div>
+  </div>
+  <nav class="exams" id="examTabs">
+    <button data-scroll="jee-section" class="active">JEE</button>
+    <button data-scroll="neet-section">NEET</button>
+    <button data-scroll="cuet-section">CUET</button>
+  </nav>
+  <div class="top-actions">
+    <div class="streak"><span class="flame">🔥</span> <span id="streakCount">0</span> day streak</div>
+    <button class="icon-btn" id="themeToggle" title="Toggle dark/light">🌙</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-card">
+      <h1 class="display">Beat the clock.<br><span class="grad">Beat the syllabus.</span></h1>
+      <p>Full-length and subject-wise mock tests for JEE, NEET and CUET — timed like the real exam, scored the instant you submit.</p>
+      <div class="cta-row">
+        <button class="btn primary" id="randomTestBtn">Start a random test</button>
+        <button class="btn ghost" id="practiceBtn">Quick practice (bonus round)</button>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div>
+        <div class="big" id="weeklyPointsBig">0</div>
+        <div class="lbl">points this week</div>
+      </div>
+      <div class="stat-row">
+        <div>
+          <div class="lbl">tests taken</div>
+          <div class="mono" style="font-size:18px;" id="testsTakenCount">0</div>
+        </div>
+        <span class="pill" id="weekRangeLbl">this week</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="builder">
+    <div class="builder-head">
+      <div class="badge">🎯</div>
+      <h3>Chapter-wise &amp; PYQ Test Builder — AI generated</h3>
+    </div>
+    <p class="hint">Pick class, subject &amp; chapter — AI bulk-generates a fresh test in seconds. Choose PYQ-pattern style or hard predicted questions based on the latest syllabus.</p>
+    <div class="builder-grid">
+      <label>Exam
+        <select id="bExam">
+          <option value="jee">JEE</option>
+          <option value="neet">NEET</option>
+          <option value="cuet">CUET</option>
+        </select>
+      </label>
+      <label>Class
+        <select id="bClass">
+          <option value="11">Class 11</option>
+          <option value="12">Class 12</option>
+        </select>
+      </label>
+      <label>Subject
+        <select id="bSubject"></select>
+      </label>
+      <label>Chapter
+        <select id="bChapter"></select>
+      </label>
+      <label>Questions
+        <select id="bCount">
+          <option value="15">15 (quick)</option>
+          <option value="20" selected>20 (bulk)</option>
+          <option value="30">30 (full)</option>
+        </select>
+      </label>
+    </div>
+    <div class="builder-actions">
+      <div class="type-pills" id="typePills">
+        <button class="type-pill active" data-type="chapter">📘 Chapter Practice</button>
+        <button class="type-pill" data-type="pyq">🕰️ PYQ Pattern</button>
+        <button class="type-pill" data-type="predicted">🔮 Predicted Hard</button>
+      </div>
+      <button class="btn primary" id="buildBtn">🤖 Generate &amp; start test</button>
+    </div>
+  </section>
+
+  <section class="live-banner">
+    <div>
+      <div class="live-tag"><span class="live-dot"></span> Live now</div>
+      <h3 id="liveTitle">Fetching this hour's live test…</h3>
+      <p id="liveSub">AI-generated fresh questions, refreshed automatically every hour.</p>
+    </div>
+    <div class="live-right">
+      <div class="live-countdown">Next refresh in<br><b id="liveCountdown">--:--</b></div>
+      <button class="btn ghost" id="liveRefreshBtn">Regenerate now</button>
+      <button class="btn primary" id="liveAttemptBtn">Attempt live test</button>
+    </div>
+  </section>
+
+  <div id="examSections"></div>
+
+  <section>
+    <h2 class="sec-title">Weekly leaderboard (this device)</h2>
+    <div class="board" id="leaderboard"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Test Wallah — built for aspirants, not for leaks.</span>
+  <span>Team Leakage © 2026</span>
+</footer>
+
+<div id="quizScreen">
+  <div class="quiz-head">
+    <div>
+      <div class="qtitle" id="quizTitle">Physics</div>
+      <div class="qnum" id="quizSub">Question 1 of 10</div>
+    </div>
+    <div class="timer" id="quizTimer">10:00</div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="quiz-body">
+    <div class="qtext" id="qText">Loading question…</div>
+    <div id="optsWrap"></div>
+    <div class="quiz-nav">
+      <button class="btn ghost" id="prevBtn">← Previous</button>
+      <button class="btn primary" id="nextBtn">Next →</button>
+    </div>
+    <div class="dots" id="dotsWrap"></div>
+  </div>
+</div>
+
+<div id="resultScreen">
+  <div class="res-wrap">
+    <div class="lbl" style="color:var(--muted); font-size:13px;">Test complete</div>
+    <div class="res-score" id="resScore">0%</div>
+    <div id="resSubject" style="color:var(--muted); font-size:13px; margin-top:6px;">Physics · JEE</div>
+    <div class="res-grid">
+      <div><div class="n" id="resCorrect">0</div><div class="l">correct</div></div>
+      <div><div class="n" id="resWrong">0</div><div class="l">wrong</div></div>
+      <div><div class="n" id="resPoints">0</div><div class="l">points earned</div></div>
+    </div>
+    <div class="cta-row" style="justify-content:center;">
+      <button class="btn primary" id="retryBtn">Retry this test</button>
+      <button class="btn ghost" id="dashBtn">Back to dashboard</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="tgBackdrop">
+  <div class="tg-modal">
+    <button class="close" id="tgClose">✕</button>
+    <div class="tg-icon">✈</div>
+    <h3>Join the Test Wallah channel</h3>
+    <p>Daily mock alerts, answer keys and rank updates — all on Telegram.</p>
+    <a class="btn" href="https://t.me/your_channel_username" target="_blank" rel="noopener">Join on Telegram</a>
+  </div>
+</div>
+
+<button id="aiBubble">💬</button>
+<div id="aiPanel">
+  <div class="ai-head"><span>Doubt Solver <span class="tag">AI agent</span></span><button class="icon-btn" id="aiClose" style="width:26px;height:26px;font-size:13px;">✕</button></div>
+  <div id="aiMsgs"><div class="msg bot">Stuck on a question? Ask me anything from Physics, Chemistry, Maths or Biology — I'll explain it simply.</div></div>
+  <div class="ai-input">
+    <input id="aiInput" type="text" placeholder="Type your doubt…">
+    <button id="aiSend">Send</button>
+  </div>
+</div>
+
+<script>
+/* ---------------- QUESTION BANKS (original, authored) ---------------- */
+const BANKS = {
+  physics: [
+    {q:"A body moving with uniform velocity has:", o:["Zero acceleration","Increasing speed","Non-zero net force","Variable direction"], a:0},
+    {q:"SI unit of electric resistance is:", o:["Ohm","Farad","Henry","Weber"], a:0},
+    {q:"The work done by a force acting perpendicular to displacement is:", o:["Zero","Maximum","Negative","Infinite"], a:0},
+    {q:"Which quantity remains constant in projectile motion (no air resistance)?", o:["Horizontal velocity","Vertical velocity","Speed","Acceleration direction only"], a:0},
+    {q:"A convex lens always forms a virtual image when the object is:", o:["Between focus and lens","Beyond 2F","At 2F","At infinity"], a:0},
+    {q:"The dimensional formula of power is:", o:["[ML²T⁻³]","[MLT⁻²]","[ML²T⁻²]","[MLT⁻¹]"], a:0},
+    {q:"According to Newton's third law, action and reaction forces:", o:["Act on different bodies","Act on the same body","Cancel each other","Are always vertical"], a:0},
+    {q:"The phenomenon of bending of light around obstacles is called:", o:["Diffraction","Refraction","Dispersion","Polarisation"], a:0},
+    {q:"Kinetic energy of a body is doubled when its velocity is multiplied by:", o:["√2","2","4","1/2"], a:0},
+    {q:"The SI unit of magnetic flux is:", o:["Weber","Tesla","Henry","Ohm"], a:0},
+    {q:"The escape velocity of a body depends on:", o:["Mass and radius of the planet","Mass of the body only","Shape of the body","Colour of the body"], a:0},
+    {q:"A projectile fired at 45° has:", o:["Maximum horizontal range","Maximum height only","Minimum time of flight","Zero range"], a:0},
+    {q:"The unit of specific heat capacity in SI is:", o:["J kg⁻¹ K⁻¹","J K⁻¹","cal g⁻¹ °C⁻¹","W m⁻¹ K⁻¹"], a:0},
+    {q:"In series combination, the equivalent resistance is:", o:["Sum of individual resistances","Less than the smallest resistance","Product of resistances","Always zero"], a:0},
+    {q:"The photoelectric effect proves that light behaves as a:", o:["Particle (photon)","Pure wave","Neither particle nor wave","Sound wave"], a:0},
+    {q:"An object in simple harmonic motion has maximum acceleration at:", o:["Extreme position","Mean position","Quarter position","It's constant everywhere"], a:0},
+    {q:"The principle of a transformer is based on:", o:["Mutual induction","Self induction only","Static electricity","Thermal expansion"], a:0},
+    {q:"Sound cannot travel through:", o:["Vacuum","Air","Water","Steel"], a:0},
+    {q:"The half-life of a radioactive substance is the time in which:", o:["Half the atoms decay","All atoms decay","No atoms decay","Mass doubles"], a:0},
+    {q:"Which mirror is used as a rear-view mirror in vehicles?", o:["Convex mirror","Concave mirror","Plane mirror","Parabolic mirror only"], a:0},
+    {q:"The centripetal force in circular motion acts:", o:["Towards the centre","Away from the centre","Tangentially","In no fixed direction"], a:0},
+    {q:"Ohm's law is valid for:", o:["Ohmic conductors at constant temperature","All conductors always","Only semiconductors","Only insulators"], a:0}
+  ],
+  chemistry: [
+    {q:"The number of moles in 22.4 L of a gas at STP is:", o:["1","2","0.5","22.4"], a:0},
+    {q:"pH of a neutral solution at 25°C is:", o:["7","0","14","1"], a:0},
+    {q:"Which of the following is an example of an isotope pair?", o:["¹H and ²H","O₂ and O₃","NaCl and KCl","CH₄ and C₂H₆"], a:0},
+    {q:"The hybridisation of carbon in methane (CH₄) is:", o:["sp³","sp²","sp","dsp²"], a:0},
+    {q:"Which gas is produced when zinc reacts with dilute HCl?", o:["Hydrogen","Oxygen","Chlorine","Nitrogen"], a:0},
+    {q:"The functional group –COOH is called:", o:["Carboxylic acid","Aldehyde","Ketone","Ester"], a:0},
+    {q:"Which of these is a strong electrolyte?", o:["NaCl","CH₃COOH","NH₄OH","H₂CO₃"], a:0},
+    {q:"Avogadro's number is approximately:", o:["6.022×10²³","3.14×10²³","9.8×10²³","1.6×10²³"], a:0},
+    {q:"The oxidation state of oxygen in H₂O₂ is:", o:["-1","-2","0","+1"], a:0},
+    {q:"Which element has the electronic configuration 2,8,8,1?", o:["Potassium","Sodium","Calcium","Chlorine"], a:0},
+    {q:"The IUPAC name of CH₃-CH₂-OH is:", o:["Ethanol","Methanol","Ethanal","Ethanoic acid"], a:0},
+    {q:"Which of the following is a noble gas?", o:["Argon","Nitrogen","Oxygen","Hydrogen"], a:0},
+    {q:"The catalyst used in the Haber process for ammonia synthesis is:", o:["Iron","Platinum","Nickel","Copper"], a:0},
+    {q:"An element with atomic number 17 belongs to which group?", o:["Halogens (Group 17)","Alkali metals","Noble gases","Alkaline earth metals"], a:0},
+    {q:"Rusting of iron is an example of:", o:["Oxidation","Reduction","Neutralisation","Sublimation"], a:0},
+    {q:"Which of these has the highest first ionisation energy?", o:["Neon","Sodium","Magnesium","Aluminium"], a:0},
+    {q:"The molar mass of water (H₂O) is approximately:", o:["18 g/mol","16 g/mol","20 g/mol","10 g/mol"], a:0},
+    {q:"Which type of bond is formed by the sharing of electron pairs?", o:["Covalent bond","Ionic bond","Metallic bond","Hydrogen bond only"], a:0},
+    {q:"Vinegar owes its acidic nature to:", o:["Acetic acid","Citric acid","Formic acid","Lactic acid"], a:0},
+    {q:"The process of converting a liquid directly into vapour at any temperature is:", o:["Evaporation","Boiling","Condensation","Sublimation"], a:0},
+    {q:"Which of the following is an example of a homogeneous mixture?", o:["Salt solution","Sand and water","Oil and water","Iron filings and sulphur"], a:0},
+    {q:"The general formula for alkanes is:", o:["CₙH₂ₙ₊₂","CₙH₂ₙ","CₙH₂ₙ₋₂","CₙHₙ"], a:0}
+  ],
+  maths: [
+    {q:"The derivative of sin(x) with respect to x is:", o:["cos(x)","-cos(x)","-sin(x)","tan(x)"], a:0},
+    {q:"If a and b are roots of x² - 5x + 6 = 0, then a + b equals:", o:["5","6","-5","-6"], a:0},
+    {q:"The value of ∫x dx is:", o:["x²/2 + C","x + C","x² + C","2x + C"], a:0},
+    {q:"The determinant of a 2×2 identity matrix is:", o:["1","0","2","-1"], a:0},
+    {q:"The number of ways to arrange 5 distinct books on a shelf is:", o:["120","20","60","24"], a:0},
+    {q:"If sinθ = 1/2, one possible value of θ is:", o:["30°","45°","60°","90°"], a:0},
+    {q:"The sum of first n natural numbers is given by:", o:["n(n+1)/2","n²","n(n-1)/2","2n"], a:0},
+    {q:"The slope of a line perpendicular to y = 2x + 3 is:", o:["-1/2","2","-2","1/2"], a:0},
+    {q:"The probability of getting a head in a fair coin toss is:", o:["1/2","1","0","1/4"], a:0},
+    {q:"The distance between points (0,0) and (3,4) is:", o:["5","7","4","3"], a:0},
+    {q:"The value of log₁₀(100) is:", o:["2","10","100","1"], a:0},
+    {q:"If f(x) = x², then f'(3) equals:", o:["6","9","3","12"], a:0},
+    {q:"The number of terms in the expansion of (a+b)⁵ is:", o:["6","5","4","7"], a:0},
+    {q:"The area of a circle with radius r is:", o:["πr²","2πr","πr","4πr²"], a:0},
+    {q:"The sum to infinity of a GP with first term 1 and common ratio 1/2 is:", o:["2","1","4","1/2"], a:0},
+    {q:"If A and B are independent events with P(A)=0.4 and P(B)=0.5, then P(A∩B) is:", o:["0.20","0.90","0.10","0.45"], a:0},
+    {q:"The value of cos(0°) is:", o:["1","0","-1","undefined"], a:0},
+    {q:"The number of real roots of x² + 4 = 0 is:", o:["0","1","2","4"], a:0},
+    {q:"The mean of the first 5 natural numbers is:", o:["3","5","2.5","4"], a:0},
+    {q:"The equation of a line with slope 3 passing through origin is:", o:["y = 3x","y = x + 3","3y = x","x = 3y"], a:0},
+    {q:"If matrix A is 2×3 and matrix B is 3×4, the order of AB is:", o:["2×4","3×3","4×2","2×3"], a:0}
+  ],
+  biology: [
+    {q:"The powerhouse of the cell is:", o:["Mitochondria","Nucleus","Ribosome","Golgi body"], a:0},
+    {q:"DNA replication occurs during which phase of the cell cycle?", o:["S phase","G1 phase","G2 phase","M phase"], a:0},
+    {q:"Which blood group is known as the universal donor?", o:["O negative","AB positive","A positive","B negative"], a:0},
+    {q:"Photosynthesis mainly occurs in which part of the plant cell?", o:["Chloroplast","Mitochondria","Nucleus","Vacuole"], a:0},
+    {q:"The functional unit of the kidney is called:", o:["Nephron","Neuron","Alveolus","Nephridia"], a:0},
+    {q:"Which hormone regulates blood sugar level?", o:["Insulin","Thyroxine","Adrenaline","Estrogen"], a:0},
+    {q:"Which of these is a vector-borne disease?", o:["Malaria","Diabetes","Asthma","Anaemia"], a:0},
+    {q:"The process by which plants lose water vapour is called:", o:["Transpiration","Respiration","Photosynthesis","Excretion"], a:0},
+    {q:"Human beings have how many pairs of chromosomes?", o:["23","22","24","46 pairs"], a:0},
+    {q:"Which organ produces bile in the human body?", o:["Liver","Pancreas","Stomach","Gall bladder"], a:0},
+    {q:"The basic structural and functional unit of the nervous system is:", o:["Neuron","Nephron","Axon only","Synapse only"], a:0},
+    {q:"Which of the following is a xenobiotic-free source of vitamin C?", o:["Citrus fruits","Milk","Meat","Rice"], a:0},
+    {q:"Mendel's law of independent assortment applies to:", o:["Two genes on different chromosomes","A single gene only","Sex-linked genes only","Mitochondrial genes"], a:0},
+    {q:"The site of protein synthesis in a cell is the:", o:["Ribosome","Nucleus","Lysosome","Golgi body"], a:0},
+    {q:"Which of these is a green-house gas contributing to global warming?", o:["Carbon dioxide","Nitrogen","Oxygen","Argon"], a:0},
+    {q:"The pigment responsible for photosynthesis is:", o:["Chlorophyll","Haemoglobin","Melanin","Keratin"], a:0},
+    {q:"Which of the following connects muscle to bone?", o:["Tendon","Ligament","Cartilage","Nerve"], a:0},
+    {q:"Insulin is secreted by which cells of the pancreas?", o:["Beta cells of islets of Langerhans","Alpha cells","Acinar cells","Delta cells only"], a:0},
+    {q:"The exchange of gases in the lungs occurs in the:", o:["Alveoli","Bronchi","Trachea","Larynx"], a:0},
+    {q:"Which of the following is an example of asexual reproduction?", o:["Budding in yeast","Fertilisation in humans","Pollination in flowers","Cross-breeding"], a:0},
+    {q:"The genetic material in most living organisms is:", o:["DNA","Protein","Carbohydrate","Lipid"], a:0}
+  ],
+  general: [
+    {q:"Reading comprehension, general awareness and reasoning together fall under CUET's:", o:["General Test","Domain subject","Language test","None of these"], a:0},
+    {q:"If all Cats are Animals and all Animals are Living things, then all Cats are:", o:["Living things","Non-living","Plants","None of these"], a:0},
+    {q:"Find the odd one out: Apple, Mango, Potato, Banana", o:["Potato","Apple","Mango","Banana"], a:0},
+    {q:"The current Finance Commission of India, as of general awareness syllabus, is numbered:", o:["16th","14th","15th","13th"], a:0},
+    {q:"A train 100 m long crosses a pole in 10 seconds. Its speed is:", o:["10 m/s","100 m/s","1 m/s","36 m/s"], a:0},
+    {q:"Choose the correctly spelled word:", o:["Necessary","Neccessary","Necesary","Neccesary"], a:0},
+    {q:"If today is Monday, what day will it be after 10 days?", o:["Thursday","Wednesday","Friday","Tuesday"], a:0},
+    {q:"Which of the following is a synonym of 'Abundant'?", o:["Plentiful","Scarce","Limited","Rare"], a:0},
+    {q:"The next number in the series 2, 6, 12, 20, 30, ? is:", o:["42","36","40","44"], a:0},
+    {q:"A reading passage followed by questions on inference and tone tests:", o:["Comprehension skills","Numerical ability","Memory only","Handwriting"], a:0},
+    {q:"Which of the following is an antonym of 'Ancient'?", o:["Modern","Old","Historic","Aged"], a:0},
+    {q:"If CAT is coded as 3120, how is DOG coded (using same letter-position logic)?", o:["4157","4715","4175","1574"], a:0},
+    {q:"A clock shows 3:15. What is the angle between the hour and minute hands (approx.)?", o:["7.5°","15°","0°","30°"], a:0},
+    {q:"Which of these numbers is a prime number?", o:["29","27","21","33"], a:0},
+    {q:"Select the word that best completes: Doctor is to Hospital as Teacher is to ___", o:["School","Book","Chalk","Student"], a:0},
+    {q:"If 5 workers can complete a task in 12 days, how many days will 10 workers take?", o:["6 days","24 days","10 days","3 days"], a:0},
+    {q:"Which Article of the Indian Constitution deals with the Right to Equality?", o:["Article 14","Article 21","Article 19","Article 32"], a:0},
+    {q:"Choose the correctly punctuated sentence:", o:["She said, \"I am ready.\"","She said I am ready","she said, i am ready.","She said \"i am ready\""], a:0},
+    {q:"A reasoning question asking you to identify a pattern in shapes tests:", o:["Non-verbal reasoning","Verbal ability only","Domain knowledge","Handwriting"], a:0},
+    {q:"If the ratio of boys to girls in a class is 3:2 and there are 30 students, how many are boys?", o:["18","12","15","20"], a:0},
+    {q:"Which of these best defines 'inference' in reading comprehension?", o:["A conclusion drawn from evidence in the passage","The exact quoted line","The title of the passage","The author's name"], a:0}
+  ],
+  gat: [
+    {q:"General Aptitude Test (GAT) mainly checks a candidate's:", o:["Reasoning, quantitative & general awareness skills","Only subject-specific knowledge","Handwriting speed","Only English grammar"], a:0},
+    {q:"If the price of an item increases by 20% and then decreases by 20%, the net change is:", o:["4% decrease","No change","4% increase","20% decrease"], a:0},
+    {q:"Find the missing number: 3, 9, 27, 81, ?", o:["243","162","324","108"], a:0},
+    {q:"Simple interest on ₹5,000 at 8% per annum for 2 years is:", o:["₹800","₹400","₹1000","₹500"], a:0},
+    {q:"A is taller than B, B is taller than C. Who is the shortest?", o:["C","A","B","Cannot be determined"], a:0},
+    {q:"If the average of 5 numbers is 20, their total sum is:", o:["100","20","25","80"], a:0},
+    {q:"Choose the word that does NOT belong: Triangle, Square, Circle, Sphere", o:["Sphere","Triangle","Square","Circle"], a:0},
+    {q:"A shopkeeper marks an item 25% above cost price and gives a 10% discount. His profit percentage is:", o:["12.5%","25%","10%","15%"], a:0}
+  ],
+  accountancy: [
+    {q:"The accounting equation is expressed as:", o:["Assets = Liabilities + Capital","Assets = Liabilities - Capital","Capital = Assets + Liabilities","Liabilities = Assets + Capital"], a:0},
+    {q:"Which of these is a real account?", o:["Furniture Account","Salary Account","Rent Account","Capital Account"], a:0},
+    {q:"Depreciation is charged on which type of asset?", o:["Fixed assets","Current assets","Intangible liabilities","Contingent liabilities"], a:0},
+    {q:"The profit-sharing ratio in a partnership, in absence of an agreement, is:", o:["Equal","Based on capital contribution","Based on seniority","Decided by court only"], a:0},
+    {q:"A Trial Balance is prepared to check the:", o:["Arithmetical accuracy of accounts","Profitability of a business","Solvency of a business","Market value of assets"], a:0},
+    {q:"Goodwill is an example of a/an:", o:["Intangible asset","Tangible asset","Current liability","Fictitious asset only"], a:0},
+    {q:"Which financial statement shows a company's financial position on a given date?", o:["Balance Sheet","Trading Account","Cash Flow Statement","Profit & Loss Appropriation Account"], a:0},
+    {q:"Bad debts recovered is treated as:", o:["Income","Expense","Liability","Asset write-off"], a:0}
+  ],
+  business: [
+    {q:"Which of these is NOT a feature of a sole proprietorship?", o:["Separate legal entity","Unlimited liability","Sole risk bearer","Easy formation"], a:0},
+    {q:"Which management function involves setting objectives and deciding a course of action?", o:["Planning","Staffing","Directing","Controlling"], a:0},
+    {q:"A Memorandum of Association defines a company's:", o:["Scope of activities and objectives","Internal rules only","Employee salary structure","Marketing strategy"], a:0},
+    {q:"Which of these is a source of business finance?", o:["Retained earnings","Depreciation","Bad debts","Goodwill write-off"], a:0},
+    {q:"Marketing management primarily focuses on:", o:["Satisfying customer needs profitably","Only advertising a product","Reducing production cost","Only hiring salespeople"], a:0},
+    {q:"Which principle of Fayol states that there should be one boss for every individual employee?", o:["Unity of command","Division of work","Unity of direction","Scalar chain"], a:0},
+    {q:"E-business primarily refers to:", o:["Conducting business over electronic networks","Only online shopping","Business run only by robots","A type of partnership firm"], a:0},
+    {q:"Which of these is an example of a secondary function of management?", o:["Coordinating","Planning","Organising","Controlling"], a:0}
+  ],
+  economics: [
+    {q:"Which of these best defines 'scarcity' in economics?", o:["Limited resources with unlimited wants","Excess supply of goods","Government price control","Zero demand for a good"], a:0},
+    {q:"GDP stands for:", o:["Gross Domestic Product","Gross Development Plan","General Domestic Price","Government Development Programme"], a:0},
+    {q:"The law of demand states that, other things being equal:", o:["Price and quantity demanded are inversely related","Price and quantity demanded are directly related","Demand is always constant","Supply determines demand"], a:0},
+    {q:"Which of these is a function of the Central Bank?", o:["Controlling money supply","Selling consumer goods","Manufacturing products","Running retail stores"], a:0},
+    {q:"Inflation refers to:", o:["A sustained rise in the general price level","A fall in the price of one good","An increase in exports only","A decrease in population"], a:0},
+    {q:"Which sector does agriculture belong to?", o:["Primary sector","Secondary sector","Tertiary sector","Quaternary sector"], a:0},
+    {q:"Per capita income is calculated as:", o:["National income divided by population","Total exports divided by imports","Total tax collected divided by GDP","National income multiplied by population"], a:0},
+    {q:"Which of these is an example of indirect tax?", o:["Goods and Services Tax (GST)","Income Tax","Corporate Tax","Wealth Tax"], a:0}
+  ],
+  history: [
+    {q:"The Indus Valley Civilisation was primarily located along which river system?", o:["Indus river system","Ganga river system","Godavari river system","Brahmaputra river system"], a:0},
+    {q:"Who founded the Mauryan Empire?", o:["Chandragupta Maurya","Ashoka","Bindusara","Chanakya"], a:0},
+    {q:"The Quit India Movement was launched in the year:", o:["1942","1930","1919","1947"], a:0},
+    {q:"Who was the first Governor-General of independent India?", o:["Lord Mountbatten","Lord Curzon","C. Rajagopalachari","Lord Wavell"], a:0},
+    {q:"The Battle of Plassey was fought in the year:", o:["1757","1857","1707","1600"], a:0},
+    {q:"Which Mughal emperor built the Taj Mahal?", o:["Shah Jahan","Akbar","Aurangzeb","Humayun"], a:0},
+    {q:"The Non-Cooperation Movement was led by:", o:["Mahatma Gandhi","Subhas Chandra Bose","Bhagat Singh","Lala Lajpat Rai"], a:0},
+    {q:"The Indian National Congress was founded in the year:", o:["1885","1905","1857","1920"], a:0}
+  ],
+  polity: [
+    {q:"The Constitution of India was adopted on:", o:["26 November 1949","26 January 1950","15 August 1947","2 October 1950"], a:0},
+    {q:"Who is known as the Chairman of the Drafting Committee of the Indian Constitution?", o:["Dr. B.R. Ambedkar","Jawaharlal Nehru","Sardar Patel","Rajendra Prasad"], a:0},
+    {q:"The Preamble of the Indian Constitution declares India to be a:", o:["Sovereign, Socialist, Secular, Democratic Republic","Monarchy","Unitary State only","Confederation"], a:0},
+    {q:"Fundamental Rights are enshrined in which part of the Constitution?", o:["Part III","Part IV","Part V","Part II"], a:0},
+    {q:"The Directive Principles of State Policy are found in:", o:["Part IV","Part III","Part VI","Part I"], a:0},
+    {q:"Who appoints the Chief Justice of India?", o:["The President of India","The Prime Minister","The Parliament","The Chief Minister"], a:0},
+    {q:"India has which type of government system?", o:["Parliamentary","Presidential","Monarchical","Military"], a:0},
+    {q:"The Rajya Sabha is also known as the:", o:["Council of States","House of the People","State Assembly","Union Council"], a:0}
+  ],
+  geography: [
+    {q:"Which is the longest river in India?", o:["Ganga","Yamuna","Godavari","Brahmaputra"], a:0},
+    {q:"The Tropic of Cancer passes through how many Indian states?", o:["8","5","10","12"], a:0},
+    {q:"Which type of rocks are formed by the cooling of molten magma?", o:["Igneous rocks","Sedimentary rocks","Metamorphic rocks","Alluvial rocks"], a:0},
+    {q:"The Himalayas were formed due to the collision of which two tectonic plates?", o:["Indian and Eurasian plates","African and Asian plates","Pacific and American plates","Antarctic and Indian plates"], a:0},
+    {q:"Which is the largest desert in India?", o:["Thar Desert","Rann of Kutch","Deccan Plateau","Gobi Desert"], a:0},
+    {q:"Monsoon winds in India blow primarily from which direction in summer?", o:["Southwest","Northeast","Southeast","Northwest"], a:0},
+    {q:"Which state in India has the longest coastline?", o:["Gujarat","Kerala","Tamil Nadu","Andhra Pradesh"], a:0},
+    {q:"The Deccan Plateau is bordered by which two mountain ranges?", o:["Western Ghats and Eastern Ghats","Himalayas and Aravallis","Vindhyas and Satpuras only","Nilgiris and Shivaliks"], a:0}
+  ],
+  psychology: [
+    {q:"Who is considered the father of modern psychology?", o:["Wilhelm Wundt","Sigmund Freud","Ivan Pavlov","B.F. Skinner"], a:0},
+    {q:"Classical conditioning was demonstrated through experiments on:", o:["Dogs (Pavlov's experiments)","Rats in a maze","Human infants only","Cats in a puzzle box"], a:0},
+    {q:"Which part of the brain is primarily responsible for memory formation?", o:["Hippocampus","Cerebellum","Medulla oblongata","Pituitary gland"], a:0},
+    {q:"Maslow's hierarchy of needs places 'self-actualisation' at which level?", o:["The top of the pyramid","The base of the pyramid","The middle level only","Outside the pyramid"], a:0},
+    {q:"Intelligence Quotient (IQ) is a measure of a person's:", o:["Relative intellectual ability","Emotional stability only","Physical strength","Social status"], a:0},
+    {q:"Which type of memory holds information for a very brief period, like a few seconds?", o:["Sensory memory","Long-term memory","Semantic memory","Procedural memory"], a:0},
+    {q:"Operant conditioning is most closely associated with which psychologist?", o:["B.F. Skinner","Sigmund Freud","Carl Jung","Jean Piaget"], a:0},
+    {q:"Which of these is an example of a projective personality test?", o:["Rorschach Inkblot Test","IQ Test","Aptitude Test","Achievement Test"], a:0}
+  ]
+};
+
+const EXAMS = {
+  jee: [
+    {id:"jee-physics", name:"Physics", bank:"physics", c:"var(--phy)", mins:30},
+    {id:"jee-chemistry", name:"Chemistry", bank:"chemistry", c:"var(--chem)", mins:30},
+    {id:"jee-maths", name:"Mathematics", bank:"maths", c:"var(--math)", mins:35}
+  ],
+  neet: [
+    {id:"neet-physics", name:"Physics", bank:"physics", c:"var(--phy)", mins:25},
+    {id:"neet-chemistry", name:"Chemistry", bank:"chemistry", c:"var(--chem)", mins:25},
+    {id:"neet-biology", name:"Biology", bank:"biology", c:"var(--bio)", mins:35}
+  ],
+  cuet: [
+    {id:"cuet-general", name:"General Test", bank:"general", c:"var(--gen)", mins:20, group:"General"},
+    {id:"cuet-gat", name:"GAT (General Aptitude Test)", bank:"gat", c:"var(--gen)", mins:20, group:"General"},
+    {id:"cuet-english", name:"Language (English)", bank:"general", c:"var(--gen)", mins:20, group:"General"},
+    {id:"cuet-accountancy", name:"Accountancy", bank:"accountancy", c:"var(--chem)", mins:25, group:"Commerce"},
+    {id:"cuet-business", name:"Business Studies", bank:"business", c:"var(--chem)", mins:25, group:"Commerce"},
+    {id:"cuet-economics", name:"Economics", bank:"economics", c:"var(--chem)", mins:25, group:"Commerce"},
+    {id:"cuet-history", name:"History", bank:"history", c:"var(--math)", mins:25, group:"Humanities"},
+    {id:"cuet-polity", name:"Political Science", bank:"polity", c:"var(--math)", mins:25, group:"Humanities"},
+    {id:"cuet-geography", name:"Geography", bank:"geography", c:"var(--math)", mins:25, group:"Humanities"},
+    {id:"cuet-psychology", name:"Psychology", bank:"psychology", c:"var(--math)", mins:25, group:"Humanities"},
+    {id:"cuet-physics", name:"Physics (Science stream)", bank:"physics", c:"var(--phy)", mins:25, group:"Science"},
+    {id:"cuet-chemistry-sci", name:"Chemistry (Science stream)", bank:"chemistry", c:"var(--phy)", mins:25, group:"Science"},
+    {id:"cuet-biology", name:"Biology (Science stream)", bank:"biology", c:"var(--phy)", mins:25, group:"Science"},
+    {id:"cuet-maths", name:"Mathematics (Science stream)", bank:"maths", c:"var(--phy)", mins:25, group:"Science"}
+  ]
+};
+
+/* ---------------- UI ANIMATION HELPERS ---------------- */
+function showQuizScreen(){
+  const el = document.getElementById('quizScreen');
+  el.style.display = 'block';
+  el.classList.remove('showing'); void el.offsetWidth; el.classList.add('showing');
+  document.body.style.overflow = 'hidden';
+}
+function hideQuizScreen(){
+  document.getElementById('quizScreen').style.display = 'none';
+}
+function showResultScreen(){
+  const el = document.getElementById('resultScreen');
+  el.style.display = 'block';
+  el.classList.remove('showing'); void el.offsetWidth; el.classList.add('showing');
+}
+function hideResultScreen(){
+  document.getElementById('resultScreen').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+function openAIPanel(){
+  const el = document.getElementById('aiPanel');
+  el.classList.add('show');
+  requestAnimationFrame(()=> el.classList.add('open'));
+}
+function closeAIPanel(){
+  const el = document.getElementById('aiPanel');
+  el.classList.remove('open');
+  setTimeout(()=> el.classList.remove('show'), 220);
+}
+function animateNumber(el, target, duration=800){
+  const start = parseInt(el.textContent) || 0;
+  if(start === target){ el.textContent = target; return; }
+  const t0 = performance.now();
+  function frame(now){
+    const p = Math.min(1, (now - t0) / duration);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(start + (target - start) * eased);
+    if(p < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+window.addEventListener('scroll', ()=>{
+  document.querySelector('header.top').classList.toggle('scrolled', window.scrollY > 4);
+});
+
+let currentExam = "jee";
+let currentTest = null;
+let quizQuestions = [];
+let quizAnswers = [];
+let quizIndex = 0;
+let timeLeft = 0;
+let timerInterval = null;
+
+/* ============================================================
+   STORAGE — plain localStorage. (The previous version called a
+   `window.storage` API that only exists inside Claude's own
+   Artifacts preview sandbox — it does not exist in a real
+   browser, so every save/load silently threw on a real deployment.
+   localStorage is the correct, always-available replacement for
+   personal, per-device data like stats and custom question banks.)
+   ============================================================ */
+async function loadStats(){
+  try{ const raw = localStorage.getItem('tw_stats'); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
+}
+async function saveStats(statsObj){
+  try{ localStorage.setItem('tw_stats', JSON.stringify(statsObj)); }catch(e){ console.error(e); }
+}
+function isoWeekKey(d){
+  const date = new Date(d.getTime());
+  date.setHours(0,0,0,0);
+  date.setDate(date.getDate() + 3 - ((date.getDay()+6)%7));
+  const week1 = new Date(date.getFullYear(),0,4);
+  const wk = 1 + Math.round(((date - week1)/86400000 - 3 + ((week1.getDay()+6)%7))/7);
+  return date.getFullYear()+"-W"+wk;
+}
+
+let stats = {weekKey:"", weeklyPoints:0, testsThisWeek:0, streak:0, lastDay:"", history:{}, best:{}};
+
+async function initStats(){
+  const loaded = await loadStats();
+  if(loaded) stats = Object.assign(stats, loaded);
+  customBank = await loadCustomBank();
+  const wk = isoWeekKey(new Date());
+  if(stats.weekKey !== wk){
+    if(stats.weekKey){ stats.history[stats.weekKey] = stats.weeklyPoints; }
+    stats.weekKey = wk; stats.weeklyPoints = 0; stats.testsThisWeek = 0;
+  }
+  const today = new Date().toDateString();
+  if(stats.lastDay !== today){
+    const y = new Date(); y.setDate(y.getDate()-1);
+    if(stats.lastDay === y.toDateString()){ /* keep streak, increments on test completion */ }
+    else if(stats.lastDay !== ""){ stats.streak = 0; }
+  }
+  renderStats();
+}
+
+function renderStats(){
+  animateNumber(document.getElementById('weeklyPointsBig'), stats.weeklyPoints);
+  animateNumber(document.getElementById('testsTakenCount'), stats.testsThisWeek, 500);
+  document.getElementById('streakCount').textContent = stats.streak;
+  document.getElementById('weekRangeLbl').textContent = stats.weekKey;
+  renderLeaderboard();
+  renderAllExamSections();
+}
+
+function renderLeaderboard(){
+  const board = document.getElementById('leaderboard');
+  const rows = Object.entries(stats.best).sort((a,b)=>b[1].points-a[1].points).slice(0,6);
+  if(rows.length===0){
+    board.innerHTML = '<div style="color:var(--muted); font-size:13px;">No tests attempted yet this week — your best subject scores will show up here.</div>';
+    return;
+  }
+  const max = Math.max(...rows.map(r=>r[1].points),1);
+  board.innerHTML = rows.map((r,i)=>{
+    const label = testLabel(r[0]);
+    return `<div class="board-row">
+      <div class="rank">#${i+1}</div>
+      <div style="width:150px;">${label}</div>
+      <div class="barwrap"><div class="bar" style="width:${(r[1].points/max*100).toFixed(0)}%"></div></div>
+      <div class="pts">${r[1].points} pts</div>
+    </div>`;
+  }).join('');
+}
+
+function testLabel(id){
+  for(const ex in EXAMS){ const t = EXAMS[ex].find(x=>x.id===id); if(t) return t.name+" · "+ex.toUpperCase(); }
+  return id;
+}
+
+/* ---------------- CUSTOM (AI-ADDED) QUESTION POOL ---------------- */
+let customBank = {};
+
+async function loadCustomBank(){
+  try{
+    const raw = localStorage.getItem('tw_custom_bank');
+    return raw ? JSON.parse(raw) : {};
+  }catch(e){ return {}; }
+}
+async function saveCustomBank(){
+  try{ localStorage.setItem('tw_custom_bank', JSON.stringify(customBank)); }catch(e){ console.error(e); }
+}
+
+const AI_QUESTION_SYSTEM = "You write exam practice questions for Indian students. Respond with ONLY a raw JSON array, no preamble, no markdown fences, no explanation. Each array element must be an object with exactly these keys: \"q\" (question string), \"o\" (array of exactly 4 answer option strings), \"a\" (integer index 0-3 of the correct option). Questions must be original, factually correct, exam-appropriate multiple choice questions, and must not repeat obvious textbook-opening examples.";
+
+/* ============================================================
+   AI CALLS — go through our own /api/ai serverless endpoint.
+   The old code called https://api.anthropic.com directly from
+   the browser: with no x-api-key/anthropic-version headers that
+   call always failed (401 / CORS), and even with a key added it
+   would have leaked that key to every visitor's browser dev tools.
+   /api/ai.js holds the real key server-side (Vercel env var) and
+   is same-origin, so no CORS issue either.
+   ============================================================ */
+async function callAIRaw(system, prompt, maxTokens){
+  const response = await fetch('/api/ai', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ system, prompt, maxTokens })
+  });
+  const data = await response.json().catch(()=>({}));
+  if(!response.ok){
+    const msg = (data && data.error && (data.error.error?.message || data.error.message || data.error)) || 'AI request failed';
+    throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+  }
+  return data.text || '';
+}
+
+async function fetchAIQuestions(userPrompt){
+  let text = await callAIRaw(AI_QUESTION_SYSTEM, userPrompt, 2200);
+  text = text.trim().replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+  const parsed = JSON.parse(text);
+  return parsed.filter(x => x && x.q && Array.isArray(x.o) && x.o.length===4 && typeof x.a==='number');
+}
+
+async function callAIForQuestions(topicLabel, examLevel, count){
+  return fetchAIQuestions(`Write ${count} original ${topicLabel} multiple-choice practice questions at ${examLevel} difficulty, covering a wide spread of topics. Return only the JSON array.`);
+}
+
+/* ---------------- EXAM SECTIONS (JEE / NEET / CUET — separate, animated) ---------------- */
+const EXAM_META = {
+  jee: {label:"JEE (Main)", icon:"JEE", color:"var(--phy)", desc:"Physics, Chemistry & Maths — full-syllabus mocks."},
+  neet:{label:"NEET (UG)", icon:"NEET", color:"var(--bio)", desc:"Physics, Chemistry & Biology — NCERT-based mocks."},
+  cuet:{label:"CUET (UG)", icon:"CUET", color:"var(--gen)", desc:"General Test, GAT, Language, Commerce, Humanities & Science streams."}
+};
+
+function renderAllExamSections(){
+  const container = document.getElementById('examSections');
+  container.innerHTML = Object.keys(EXAMS).map(examKey=>{
+    const meta = EXAM_META[examKey];
+    return `<section class="exam-section" id="${examKey}-section" style="--ec:${meta.color}">
+      <div class="exam-head">
+        <div class="titles">
+          <div class="badge">${meta.icon}</div>
+          <div><h2>${meta.label}</h2><p>${meta.desc}</p></div>
+        </div>
+        <button class="ai-mock-btn" data-mock="${examKey}">🤖 AI full mock (mixed subjects)</button>
+      </div>
+      <div class="subject-grid" id="grid-${examKey}"></div>
+    </section>`;
+  }).join('');
+
+  Object.keys(EXAMS).forEach(examKey => renderSubjectGrid(examKey));
+
+  container.querySelectorAll('[data-mock]').forEach(btn=>{
+    btn.addEventListener('click', ()=> aiFullMock(btn.dataset.mock, btn));
+  });
+
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+  }, {threshold:0.12});
+  container.querySelectorAll('.exam-section').forEach(sec=>observer.observe(sec));
+}
+
+function renderSubjectGrid(examKey){
+  const grid = document.getElementById('grid-'+examKey);
+  if(!grid) return;
+  let lastGroup = null;
+  let cardIndex = 0;
+  grid.innerHTML = EXAMS[examKey].map((t)=>{
+    let header = '';
+    if(t.group && t.group !== lastGroup){
+      header = `<div class="stream-header">${t.group} stream</div>`;
+      lastGroup = t.group;
+    }
+    const best = stats.best[t.id];
+    const extra = (customBank[t.id] || []).length;
+    const total = BANKS[t.bank].length + extra;
+    const card = `<div class="subj-card" style="--c:${t.c}; animation-delay:${(cardIndex*0.06).toFixed(2)}s">
+      <div class="top-line"><span class="subj-name">${t.name}</span><span class="dot"></span></div>
+      <div class="meta"><span>${t.mins} min</span><span>Best: <b style="color:var(--text)">${best ? best.pct+'%' : '—'}</b></span></div>
+      <div class="pool-note">${total} in question pool${extra ? ' · +'+extra+' AI-added' : ''}</div>
+      <div class="btn-row">
+        <button class="start-btn" data-start="${t.id}">Start test</button>
+        <button class="ai-add-btn" data-aiadd="${t.id}" title="AI: bulk-add 10 more questions">🤖</button>
+      </div>
+    </div>`;
+    cardIndex++;
+    return header + card;
+  }).join('');
+  grid.querySelectorAll('[data-start]').forEach(btn=>{
+    btn.addEventListener('click', ()=> startTest(btn.dataset.start));
+  });
+  grid.querySelectorAll('[data-aiadd]').forEach(btn=>{
+    btn.addEventListener('click', ()=> aiAddQuestions(btn.dataset.aiadd, btn));
+  });
+}
+
+async function aiAddQuestions(testId, btn){
+  const t = findTest(testId);
+  const examKey = Object.keys(EXAMS).find(ex => EXAMS[ex].some(x=>x.id===testId));
+  btn.classList.add('loading'); btn.disabled = true;
+  try{
+    const fresh = await callAIForQuestions(t.name, (EXAM_META[examKey]||{}).label || examKey, 10);
+    customBank[t.id] = [...(customBank[t.id]||[]), ...fresh];
+    await saveCustomBank();
+    renderSubjectGrid(examKey);
+  }catch(e){
+    alert('AI agent could not generate more questions right now: ' + e.message);
+  }
+  btn.classList.remove('loading'); btn.disabled = false;
+}
+
+async function aiFullMock(examKey, btn){
+  const original = btn.textContent;
+  btn.textContent = '🤖 Building mixed mock…'; btn.disabled = true;
+  try{
+    const subjects = EXAMS[examKey].map(t=>t.name).join(', ');
+    const raw = await callAIForQuestions(`mixed-subject (${subjects})`, (EXAM_META[examKey]||{}).label || examKey, 20);
+    currentExam = examKey;
+    currentTest = {id:"aimock-"+examKey, name: (EXAM_META[examKey]||{}).label + " — AI Full Mock", bank:null, mins: 30};
+    quizQuestions = raw; quizAnswers = new Array(raw.length).fill(null); quizIndex = 0;
+    timeLeft = currentTest.mins * 60;
+    document.getElementById('quizTitle').textContent = currentTest.name;
+    showQuizScreen();
+    document.body.style.overflow = 'hidden';
+    renderQuestion();
+    clearInterval(timerInterval); timerInterval = setInterval(tick, 1000); updateTimerDisplay();
+  }catch(e){
+    alert('AI agent could not build the mixed mock right now: ' + e.message);
+  }
+  btn.textContent = original; btn.disabled = false;
+}
+
+/* ---------------- CHAPTER / PYQ / PREDICTED AI TEST BUILDER ---------------- */
+const CHAPTERS = {
+  physics: {
+    11:["Physical World & Units","Kinematics","Laws of Motion","Work, Energy & Power","System of Particles & Rotational Motion","Gravitation","Mechanical Properties of Solids & Fluids","Thermodynamics","Kinetic Theory","Oscillations & Waves"],
+    12:["Electric Charges & Fields","Electrostatic Potential & Capacitance","Current Electricity","Moving Charges & Magnetism","Electromagnetic Induction","Alternating Current","Electromagnetic Waves","Ray & Wave Optics","Dual Nature of Matter & Radiation","Atoms & Nuclei","Semiconductor Electronics"]
+  },
+  chemistry: {
+    11:["Basic Concepts of Chemistry","Structure of Atom","Classification of Elements & Periodicity","Chemical Bonding & Molecular Structure","States of Matter","Thermodynamics","Equilibrium","Redox Reactions","Hydrogen & s-Block Elements","p-Block Elements","Organic Chemistry Basics","Hydrocarbons"],
+    12:["Solid State","Solutions","Electrochemistry","Chemical Kinetics","d and f Block Elements","Coordination Compounds","Haloalkanes & Haloarenes","Alcohols, Phenols & Ethers","Aldehydes, Ketones & Carboxylic Acids","Amines","Biomolecules","Polymers & Everyday Chemistry"]
+  },
+  maths: {
+    11:["Sets, Relations & Functions","Trigonometric Functions","Complex Numbers","Linear Inequalities","Permutations & Combinations","Binomial Theorem","Sequences & Series","Straight Lines & Conic Sections","Limits & Derivatives","Statistics & Probability"],
+    12:["Relations & Functions","Inverse Trigonometric Functions","Matrices & Determinants","Continuity & Differentiability","Application of Derivatives","Integrals","Application of Integrals","Differential Equations","Vector Algebra","Three Dimensional Geometry","Linear Programming","Probability"]
+  },
+  biology: {
+    11:["The Living World","Biological Classification","Plant Kingdom","Animal Kingdom","Morphology of Flowering Plants","Cell: The Unit of Life","Cell Cycle & Cell Division","Photosynthesis","Respiration in Plants","Human Physiology Basics"],
+    12:["Reproduction in Organisms","Sexual Reproduction in Flowering Plants","Human Reproduction","Principles of Inheritance & Variation","Molecular Basis of Inheritance","Evolution","Human Health & Disease","Microbes in Human Welfare","Biotechnology Principles & Processes","Organisms & Populations","Ecosystem","Biodiversity & Conservation"]
+  },
+  general:{
+    11:["Reading Comprehension","General Knowledge & Current Affairs","Quantitative & Numerical Ability","Logical & Analytical Reasoning","Vocabulary & Grammar"],
+    12:["Reading Comprehension","General Knowledge & Current Affairs","Quantitative & Numerical Ability","Logical & Analytical Reasoning","Vocabulary & Grammar"]
+  },
+  gat:{
+    11:["Quantitative Aptitude","Logical & Analytical Reasoning","Verbal Ability","Data Interpretation"],
+    12:["Quantitative Aptitude","Logical & Analytical Reasoning","Verbal Ability","Data Interpretation"]
+  },
+  accountancy:{
+    11:["Introduction to Accounting","Journal, Ledger & Trial Balance","Depreciation","Rectification of Errors","Financial Statements of Sole Proprietorship"],
+    12:["Accounting for Partnership Firms","Reconstitution & Dissolution of Partnership","Accounting for Companies (Shares & Debentures)","Financial Statements Analysis","Cash Flow Statement"]
+  },
+  business:{
+    11:["Nature & Purpose of Business","Forms of Business Organisation","Private, Public & Global Enterprises","Business Services","Emerging Modes of Business (E-business)"],
+    12:["Nature & Principles of Management","Business Environment","Planning & Organising","Staffing, Directing & Controlling","Financial & Marketing Management","Consumer Protection"]
+  },
+  economics:{
+    11:["Introduction to Economics","Collection & Organisation of Data","Statistical Tools & Interpretation","Indian Economy on the Eve of Independence","Indian Economy 1950-1990"],
+    12:["National Income Accounting","Money & Banking","Determination of Income & Employment","Government Budget & the Economy","Balance of Payments","Economic Reforms since 1991"]
+  },
+  history:{
+    11:["Early Societies","Empires (Roman/Mauryan)","Central Islamic Lands","Changing Traditions","Confrontation of Cultures"],
+    12:["Bricks, Beads & Bones (Harappan Civilisation)","Kings, Farmers & Towns","Bhakti-Sufi Traditions","Mughal Court & Empire","Colonialism & the Countryside","Framing the Constitution"]
+  },
+  polity:{
+    11:["Constitution: Why & How","Rights & Duties","Election & Representation","Executive & Legislature","Judiciary & Federalism"],
+    12:["Cold War Era","End of Bipolarity","Contemporary South Asia","International Organisations","Challenges of Nation Building","Era of One-Party Dominance"]
+  },
+  geography:{
+    11:["Geography as a Discipline","Interior of the Earth","Landforms & Their Evolution","Climate & Atmosphere","Water (Oceans) & Life on Earth"],
+    12:["Human Geography: Nature & Scope","Population & Human Settlements","Primary, Secondary & Tertiary Activities","Transport, Communication & Trade","India: People & Economy","Natural Resources & Development"]
+  },
+  psychology:{
+    11:["What is Psychology?","Methods of Enquiry","Human Development","Sensation, Attention & Perception","Learning","Memory"],
+    12:["Variations in Psychological Attributes (Intelligence)","Self & Personality","Meeting Life Challenges (Stress)","Psychological Disorders","Therapeutic Approaches","Social Influence & Group Processes"]
+  }
+};
+
+let builderType = "chapter";
+
+function populateBuilderSubjects(){
+  const exam = document.getElementById('bExam').value;
+  const subjSel = document.getElementById('bSubject');
+  subjSel.innerHTML = EXAMS[exam].map(t=>`<option value="${t.bank}" data-name="${t.name}">${t.name}</option>`).join('');
+  populateBuilderChapters();
+}
+function populateBuilderChapters(){
+  const cls = document.getElementById('bClass').value;
+  const bank = document.getElementById('bSubject').value;
+  const list = (CHAPTERS[bank] && CHAPTERS[bank][cls]) || ["General Topics"];
+  document.getElementById('bChapter').innerHTML = list.map(c=>`<option>${c}</option>`).join('');
+}
+document.getElementById('bExam').addEventListener('change', populateBuilderSubjects);
+document.getElementById('bClass').addEventListener('change', populateBuilderChapters);
+document.getElementById('bSubject').addEventListener('change', populateBuilderChapters);
+document.querySelectorAll('#typePills .type-pill').forEach(p=>{
+  p.addEventListener('click', ()=>{
+    document.querySelectorAll('#typePills .type-pill').forEach(x=>x.classList.remove('active'));
+    p.classList.add('active');
+    builderType = p.dataset.type;
+  });
+});
+populateBuilderSubjects();
+
+function builderPrompt(type, examLabel, cls, subjectName, chapter, count){
+  const base = `Class ${cls} ${subjectName}, chapter "${chapter}", for ${examLabel} aspirants.`;
+  if(type === "pyq"){
+    return `Write ${count} original multiple-choice questions in the exact pattern, phrasing style and difficulty level typically seen in previous years' ${examLabel} papers, for ${base} These should be fresh, original questions inspired by common previous-year question patterns and frequently tested concepts — do not copy any real question verbatim. Mix easy, medium and hard. Return only the JSON array.`;
+  }
+  if(type === "predicted"){
+    return `Based on the latest official ${examLabel} syllabus, write ${count} original HIGH-DIFFICULTY multiple-choice questions predicting the kind of tough, multi-concept, application-based questions likely to appear in upcoming exams, for ${base} Favour tricky conceptual traps, multi-step numericals and least-attempted topics. Return only the JSON array.`;
+  }
+  return `Write ${count} original multiple-choice practice questions strictly from ${base} Cover the chapter thoroughly with a good variety — definitions, numericals/application and conceptual questions, mixed difficulty. Return only the JSON array.`;
+}
+
+document.getElementById('buildBtn').addEventListener('click', async ()=>{
+  const btn = document.getElementById('buildBtn');
+  const original = btn.textContent;
+  const exam = document.getElementById('bExam').value;
+  const cls = document.getElementById('bClass').value;
+  const subjSel = document.getElementById('bSubject');
+  const subjectName = subjSel.selectedOptions[0].dataset.name;
+  const chapter = document.getElementById('bChapter').value;
+  const count = document.getElementById('bCount').value;
+  const examLabel = (EXAM_META[exam]||{}).label || exam.toUpperCase();
+  const typeLabels = {chapter:"Chapter Practice", pyq:"PYQ Pattern", predicted:"Predicted Hard"};
+
+  btn.textContent = '🤖 Generating in bulk…'; btn.disabled = true;
+  try{
+    const qs = await fetchAIQuestions(builderPrompt(builderType, examLabel, cls, subjectName, chapter, count));
+    if(qs.length < 4) throw new Error('too few valid questions returned');
+    currentExam = exam;
+    currentTest = {id:"builder-"+exam+"-"+subjSel.value, name:`${chapter} — ${typeLabels[builderType]} (Class ${cls})`, bank:null, mins: Math.max(15, Math.round(qs.length*1.4))};
+    quizQuestions = qs; quizAnswers = new Array(qs.length).fill(null); quizIndex = 0;
+    timeLeft = currentTest.mins * 60;
+    document.getElementById('quizTitle').textContent = currentTest.name;
+    showQuizScreen();
+    renderQuestion();
+    clearInterval(timerInterval); timerInterval = setInterval(tick, 1000); updateTimerDisplay();
+  }catch(e){
+    alert('AI agent could not build this test right now: ' + e.message);
+  }
+  btn.textContent = original; btn.disabled = false;
+});
+
+document.querySelectorAll('#examTabs button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('#examTabs button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const sec = document.getElementById(b.dataset.scroll);
+    if(sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+document.getElementById('randomTestBtn').addEventListener('click', ()=>{
+  const all = Object.values(EXAMS).flat();
+  startTest(all[Math.floor(Math.random()*all.length)].id);
+});
+
+/* ---------------- QUIZ ENGINE ---------------- */
+function findTest(id){
+  for(const ex in EXAMS){ const t = EXAMS[ex].find(x=>x.id===id); if(t) return t; }
+}
+
+function startTest(id){
+  currentTest = findTest(id);
+  const pool = [...BANKS[currentTest.bank], ...(customBank[id]||[])];
+  quizQuestions = shuffle([...pool]).slice(0, Math.min(12, pool.length));
+  quizAnswers = new Array(quizQuestions.length).fill(null);
+  quizIndex = 0;
+  timeLeft = currentTest.mins * 60;
+  document.getElementById('quizTitle').textContent = currentTest.name;
+  showQuizScreen();
+  document.body.style.overflow = 'hidden';
+  renderQuestion();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(tick, 1000);
+  updateTimerDisplay();
+}
+
+function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+
+function tick(){
+  timeLeft--;
+  updateTimerDisplay();
+  if(timeLeft<=0){ clearInterval(timerInterval); finishQuiz(); }
+}
+function updateTimerDisplay(){
+  const m = Math.floor(timeLeft/60), s = timeLeft%60;
+  const el = document.getElementById('quizTimer');
+  el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  el.classList.toggle('low', timeLeft<60);
+}
+
+function renderQuestion(){
+  const q = quizQuestions[quizIndex];
+  document.getElementById('quizSub').textContent = `Question ${quizIndex+1} of ${quizQuestions.length}`;
+  document.getElementById('progressFill').style.width = `${((quizIndex+1)/quizQuestions.length*100)}%`;
+  document.getElementById('qText').textContent = q.q;
+  const letters = ['A','B','C','D'];
+  document.getElementById('optsWrap').innerHTML = q.o.map((opt,i)=>
+    `<div class="opt ${quizAnswers[quizIndex]===i?'selected':''}" data-i="${i}">
+      <span class="letter">${letters[i]}</span><span>${opt}</span>
+    </div>`).join('');
+  document.querySelectorAll('.opt').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      quizAnswers[quizIndex] = parseInt(el.dataset.i);
+      renderQuestion();
+    });
+  });
+  document.getElementById('prevBtn').disabled = quizIndex===0;
+  document.getElementById('nextBtn').textContent = quizIndex===quizQuestions.length-1 ? 'Submit test' : 'Next →';
+  renderDots();
+}
+
+function renderDots(){
+  document.getElementById('dotsWrap').innerHTML = quizQuestions.map((_,i)=>
+    `<span class="${quizAnswers[i]!==null?'done':''} ${i===quizIndex?'current':''}" data-i="${i}">${i+1}</span>`
+  ).join('');
+  document.querySelectorAll('.dots span').forEach(el=>{
+    el.addEventListener('click', ()=>{ quizIndex = parseInt(el.dataset.i); renderQuestion(); });
+  });
+}
+
+document.getElementById('prevBtn').addEventListener('click', ()=>{ if(quizIndex>0){ quizIndex--; renderQuestion(); } });
+document.getElementById('nextBtn').addEventListener('click', ()=>{
+  if(quizIndex < quizQuestions.length-1){ quizIndex++; renderQuestion(); }
+  else { clearInterval(timerInterval); finishQuiz(); }
+});
+
+async function finishQuiz(){
+  hideQuizScreen();
+  let correct=0, wrong=0;
+  quizQuestions.forEach((q,i)=>{
+    if(quizAnswers[i]===q.a) correct++;
+    else if(quizAnswers[i]!==null) wrong++;
+  });
+  const pct = Math.round((correct/quizQuestions.length)*100);
+  const points = Math.max(0, correct*10 - wrong*2);
+
+  stats.weeklyPoints += points;
+  stats.testsThisWeek += 1;
+  const today = new Date().toDateString();
+  if(stats.lastDay !== today){
+    const y = new Date(); y.setDate(y.getDate()-1);
+    stats.streak = (stats.lastDay === y.toDateString()) ? stats.streak+1 : 1;
+    stats.lastDay = today;
+  }
+  const prevBest = stats.best[currentTest.id];
+  if(!prevBest || pct > prevBest.pct){ stats.best[currentTest.id] = {pct, points}; }
+  await saveStats(stats);
+  renderStats();
+
+  document.getElementById('resScore').textContent = pct + '%';
+  document.getElementById('resSubject').textContent = `${currentTest.name} · ${currentExam.toUpperCase()}`;
+  document.getElementById('resCorrect').textContent = correct;
+  document.getElementById('resWrong').textContent = wrong;
+  document.getElementById('resPoints').textContent = '+'+points;
+  showResultScreen();
+  if(pct >= 70) fireConfetti();
+}
+
+function fireConfetti(){
+  const colors = ['#F5A623','#35C48C','#4EA8DE','#B784F0','#FF8FA3'];
+  for(let i=0; i<26; i++){
+    const p = document.createElement('div');
+    const size = 6 + Math.random()*6;
+    p.style.cssText = `position:fixed; z-index:300; top:-20px; left:${Math.random()*100}vw;
+      width:${size}px; height:${size*0.6}px; background:${colors[i%colors.length]};
+      opacity:.9; border-radius:2px; pointer-events:none;
+      transform:rotate(${Math.random()*360}deg);`;
+    document.body.appendChild(p);
+    const fall = 500 + Math.random()*400;
+    const drift = (Math.random()-0.5) * 200;
+    const dur = 1800 + Math.random()*1200;
+    p.animate([
+      { transform:`translate(0,0) rotate(0deg)`, offset:0 },
+      { transform:`translate(${drift}px, ${fall}vh) rotate(${360+Math.random()*360}deg)`, offset:1 }
+    ], { duration:dur, easing:'cubic-bezier(.2,.6,.4,1)' });
+    setTimeout(()=> p.remove(), dur+50);
+  }
+}
+
+document.getElementById('retryBtn').addEventListener('click', ()=>{
+  hideResultScreen();
+  startTest(currentTest.id);
+});
+document.getElementById('dashBtn').addEventListener('click', ()=>{
+  hideResultScreen();
+  document.body.style.overflow = 'auto';
+});
+
+/* ---------------- QUICK PRACTICE — free public API (Open Trivia DB) ---------------- */
+document.getElementById('practiceBtn').addEventListener('click', async ()=>{
+  const btn = document.getElementById('practiceBtn');
+  const original = btn.textContent;
+  btn.textContent = 'Fetching questions…'; btn.disabled = true;
+  try{
+    const res = await fetch('https://opentdb.com/api.php?amount=10&category=17&type=multiple');
+    const data = await res.json();
+    const decode = s => { const t=document.createElement('textarea'); t.innerHTML=s; return t.value; };
+    const qs = data.results.map(r=>{
+      const opts = shuffle([...r.incorrect_answers.map(decode), decode(r.correct_answer)]);
+      return {q:decode(r.question), o:opts, a:opts.indexOf(decode(r.correct_answer))};
+    });
+    currentTest = {id:"bonus-practice", name:"Bonus Round (Science & Nature)", bank:null, mins:10};
+    quizQuestions = qs; quizAnswers = new Array(qs.length).fill(null); quizIndex = 0;
+    timeLeft = 10*60;
+    document.getElementById('quizTitle').textContent = currentTest.name;
+    showQuizScreen();
+    document.body.style.overflow = 'hidden';
+    renderQuestion();
+    clearInterval(timerInterval); timerInterval = setInterval(tick, 1000); updateTimerDisplay();
+  }catch(e){
+    alert('Could not reach the practice question API right now — please try again.');
+  }
+  btn.textContent = original; btn.disabled = false;
+});
+
+/* ---------------- THEME TOGGLE ---------------- */
+document.getElementById('themeToggle').addEventListener('click', ()=>{
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '🌙' : '☀️';
+});
+
+/* ---------------- TELEGRAM POPUP ---------------- */
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{ document.getElementById('tgBackdrop').classList.add('show'); }, 1400);
+});
+document.getElementById('tgClose').addEventListener('click', ()=>{
+  document.getElementById('tgBackdrop').classList.remove('show');
+});
+document.getElementById('tgBackdrop').addEventListener('click', (e)=>{
+  if(e.target.id === 'tgBackdrop') document.getElementById('tgBackdrop').classList.remove('show');
+});
+
+/* ---------------- AI DOUBT-SOLVER AGENT ---------------- */
+document.getElementById('aiBubble').addEventListener('click', ()=>{
+  openAIPanel();
+});
+document.getElementById('aiClose').addEventListener('click', ()=>{
+  closeAIPanel();
+});
+
+async function askAI(question){
+  const msgs = document.getElementById('aiMsgs');
+  msgs.insertAdjacentHTML('beforeend', `<div class="msg user">${question}</div>`);
+  msgs.insertAdjacentHTML('beforeend', `<div class="msg bot thinking" id="thinking"><span></span><span></span><span></span></div>`);
+  msgs.scrollTop = msgs.scrollHeight;
+  try{
+    const text = await callAIRaw(
+      "You are a friendly doubt-solving tutor for Indian JEE, NEET and CUET aspirants. Explain concepts simply, in short paragraphs or steps, using examples relevant to the exam syllabus. Keep answers under 150 words unless asked for more detail.",
+      question,
+      1000
+    );
+    document.getElementById('thinking').outerHTML = `<div class="msg bot">${(text || "Sorry, I couldn't work that out — try rephrasing your question.")}</div>`;
+  }catch(e){
+    document.getElementById('thinking').outerHTML = `<div class="msg bot">Couldn't reach the AI agent: ${e.message}</div>`;
+  }
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+document.getElementById('aiSend').addEventListener('click', ()=>{
+  const input = document.getElementById('aiInput');
+  const val = input.value.trim();
+  if(!val) return;
+  input.value = '';
+  askAI(val);
+});
+document.getElementById('aiInput').addEventListener('keydown', (e)=>{
+  if(e.key === 'Enter'){ document.getElementById('aiSend').click(); }
+});
+
+/* ---------------- LIVE AI-GENERATED TEST (auto, hourly, bulk) ---------------- */
+/* Live test data is fetched/stored through /api/live-test. If Vercel KV is
+   connected (see README), every visitor sees the exact same live test —
+   a true shared round. If KV isn't connected yet, this transparently falls
+   back to a per-browser localStorage cache so the feature still works,
+   just without the "everyone sees the same test" guarantee. */
+const LIVE_ROTATION = [
+  {exam:"jee", bank:"physics", label:"JEE Physics"},
+  {exam:"jee", bank:"chemistry", label:"JEE Chemistry"},
+  {exam:"jee", bank:"maths", label:"JEE Maths"},
+  {exam:"neet", bank:"biology", label:"NEET Biology"},
+  {exam:"neet", bank:"physics", label:"NEET Physics"},
+  {exam:"cuet", bank:"general", label:"CUET General Test"}
+];
+const LIVE_REFRESH_MS = 60 * 60 * 1000; // 1 hour
+let liveTest = null;
+let liveCountdownInterval = null;
+let liveKvConnected = false;
+
+async function loadLiveShared(){
+  try{
+    const r = await fetch('/api/live-test');
+    const j = await r.json();
+    liveKvConnected = !!j.kvConnected;
+    if(j && j.data) return j.data;
+  }catch(e){ /* fall through to local cache */ }
+  try{
+    const raw = localStorage.getItem('tw_live_test_local');
+    return raw ? JSON.parse(raw) : null;
+  }catch(e){ return null; }
+}
+async function saveLiveShared(data){
+  try{ localStorage.setItem('tw_live_test_local', JSON.stringify(data)); }catch(e){}
+  try{
+    await fetch('/api/live-test', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+  }catch(e){ /* harmless if KV isn't connected */ }
+}
+
+function pickRotationSlot(){
+  const hourIndex = Math.floor(Date.now() / LIVE_REFRESH_MS);
+  return LIVE_ROTATION[hourIndex % LIVE_ROTATION.length];
+}
+
+async function generateLiveTestBulk(){
+  const slot = pickRotationSlot();
+  document.getElementById('liveTitle').textContent = `Generating ${slot.label} live test…`;
+  document.getElementById('liveSub').textContent = 'AI agent is writing 15 fresh questions in bulk — one moment.';
+  try{
+    const text = await callAIRaw(
+      "You write exam practice questions for Indian students. Respond with ONLY a raw JSON array, no preamble, no markdown fences, no explanation. Each array element must be an object with exactly these keys: \"q\" (question string), \"o\" (array of exactly 4 answer option strings), \"a\" (integer index 0-3 of the correct option). Questions must be original, factually correct, exam-appropriate multiple choice questions.",
+      `Write 15 original ${slot.label} multiple-choice practice questions at ${slot.exam.toUpperCase()} exam difficulty, covering a spread of topics. Return only the JSON array.`,
+      2000
+    );
+    const cleaned = text.trim().replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+    const parsed = JSON.parse(cleaned);
+    const clean = parsed.filter(x => x && x.q && Array.isArray(x.o) && x.o.length===4 && typeof x.a==='number').slice(0,15);
+    if(clean.length < 5) throw new Error('too few valid questions parsed');
+    liveTest = {generatedAt: Date.now(), exam: slot.exam, label: slot.label, questions: clean};
+    await saveLiveShared(liveTest);
+    renderLiveBanner();
+  }catch(e){
+    document.getElementById('liveTitle').textContent = `Couldn't generate ${slot.label} live test`;
+    document.getElementById('liveSub').textContent = `AI agent hit an error (${e.message}) — tap "Regenerate now" to retry.`;
+  }
+}
+
+function renderLiveBanner(){
+  if(!liveTest) return;
+  document.getElementById('liveTitle').textContent = `${liveTest.label} — Live Test (${liveTest.questions.length} Qs)`;
+  document.getElementById('liveSub').textContent = liveKvConnected
+    ? 'Bulk-generated by the AI agent this hour. Same test for every student right now.'
+    : 'Bulk-generated by the AI agent this hour, cached on this device.';
+}
+
+function startLiveCountdown(){
+  clearInterval(liveCountdownInterval);
+  liveCountdownInterval = setInterval(()=>{
+    if(!liveTest) return;
+    const elapsed = Date.now() - liveTest.generatedAt;
+    const remain = Math.max(0, LIVE_REFRESH_MS - elapsed);
+    const m = Math.floor(remain/60000), s = Math.floor((remain%60000)/1000);
+    document.getElementById('liveCountdown').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if(remain <= 0){ generateLiveTestBulk(); }
+  }, 1000);
+}
+
+async function initLiveTest(){
+  const shared = await loadLiveShared();
+  const fresh = shared && (Date.now() - shared.generatedAt) < LIVE_REFRESH_MS;
+  if(fresh){ liveTest = shared; renderLiveBanner(); }
+  else{ await generateLiveTestBulk(); }
+  startLiveCountdown();
+}
+
+document.getElementById('liveRefreshBtn').addEventListener('click', generateLiveTestBulk);
+document.getElementById('liveAttemptBtn').addEventListener('click', ()=>{
+  if(!liveTest || !liveTest.questions.length){ generateLiveTestBulk(); return; }
+  currentExam = liveTest.exam;
+  currentTest = {id:"live-"+liveTest.exam, name: liveTest.label + " (Live)", bank:null, mins: 20};
+  quizQuestions = liveTest.questions;
+  quizAnswers = new Array(quizQuestions.length).fill(null);
+  quizIndex = 0;
+  timeLeft = currentTest.mins * 60;
+  document.getElementById('quizTitle').textContent = currentTest.name;
+  showQuizScreen();
+  document.body.style.overflow = 'hidden';
+  renderQuestion();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(tick, 1000);
+  updateTimerDisplay();
+});
+
+/* ---------------- INIT ---------------- */
+initStats();
+initLiveTest();
+</script>
+</body>
+</html>
