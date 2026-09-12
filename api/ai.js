@@ -1,9 +1,18 @@
-// api/ai.js
+
+  // api/ai.js
 //
 // Uses Google's Gemini API — completely FREE, no credit card required.
 // Get a free key at https://aistudio.google.com/apikey (just sign in with
 // a Google account, click "Create API key"). Gemini's free tier has a
 // generous daily quota which is more than enough for a quiz app like this.
+//
+// Model: gemini-3.8-flash (GA as of Sept 2, 2026, Google's current
+// flagship Flash model). NOTE: Google retires Gemini model names
+// aggressively — gemini-2.0-flash (used in an earlier version of this
+// file) was already shut down on June 1, 2026. If this model ever stops
+// working, check https://ai.google.dev/gemini-api/docs/changelog for the
+// current model name and update GEMINI_MODEL below (or set it as a Vercel
+// env var to change it without editing code).
 //
 // SETUP (one-time, in the Vercel dashboard):
 //   Project -> Settings -> Environment Variables
@@ -14,7 +23,7 @@
 // ({system, prompt, maxTokens} in -> {text} out), so nothing in
 // index.html needs to change — only the AI provider underneath.
 
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
